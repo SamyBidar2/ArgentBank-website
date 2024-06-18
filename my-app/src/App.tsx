@@ -5,12 +5,14 @@ import logo from "./logo.svg"
 import { Header } from "./Components/Header"
 import { Footer } from "./Components/Footer"
 import { Home } from "./Pages/Home"
+import { SignIn } from "./Pages/SignIn"
 
 const App = () => {
   return (
     <div className="App">
       <Header/>
       <Home/>
+      <SignIn/>
       <Footer/>
     </div>
   )
