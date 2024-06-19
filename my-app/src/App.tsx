@@ -1,26 +1,35 @@
-import "./App.css"
-import { Counter } from "./features/counter/Counter"
-import { Quotes } from "./features/quotes/Quotes"
-import logo from "./logo.svg"
-import { Header } from "./Components/Header"
-import { Footer } from "./Components/Footer"
-import { Home } from "./Pages/Home"
-import { SignIn } from "./Pages/SignIn"
+import { Routes, Route, BrowserRouter} from 'react-router-dom';
+import "./App.css";
+
+import { Header } from "./Components/Header";
+import { Footer } from "./Components/Footer";
+import { Home } from "./Pages/Home";
+import { SignIn } from "./Pages/SignIn";
+import { User } from "./Pages/User";
 
 const App = () => {
   return (
-    <div className="App">
-      <Header/>
-      <Home/>
-      <SignIn/>
-      <Footer/>
-    </div>
+    <BrowserRouter>
+       <div className="App">
+        <Header/>
+        <Routes>
+          <Route path ='/' element={<Home />} />
+          <Route path ='SignIn' element={<SignIn />} />
+          <Route path ='User' element={<User />} />
+          {/* <Route path ="*" element={<Error />} /> */}
+        </Routes> 
+        <Footer/>
+      </div>
+    </BrowserRouter>
+   
   )
 }
 
 export default App
 
-
+// import { Counter } from "./features/counter/Counter"
+// import { Quotes } from "./features/quotes/Quotes"
+// import logo from "./logo.svg"
 // <header className="App-header">
 //         <img src={logo} className="App-logo" alt="logo" />
 //         <Counter />

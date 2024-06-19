@@ -1,4 +1,5 @@
 import './index.css';
+import { NavLink } from 'react-router-dom';
 
 
 export const SignIn = () => {
@@ -21,7 +22,11 @@ export const SignIn = () => {
                 <label htmlFor="remember-me">Remember me</label>
             </div>
             {/* <!-- PLACEHOLDER DUE TO STATIC SITE --> */}
-            <a href="./user.html" className="sign-in-button">Sign In</a>
+
+            <NavLink  to={'/User'} className="sign-in-button">
+                Sign In
+            </NavLink>
+            {/* <a href="./user.html" className="sign-in-button">Sign In</a> */}
             {/* <!-- SHOULD BE THE BUTTON BELOW --> */}
             {/* <!-- <button className="sign-in-button">Sign In</button> -->
             <!--  --> */}
