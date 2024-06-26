@@ -21,11 +21,11 @@ export const SignIn = () => {
             <i className="fa fa-user-circle sign-in-icon"></i>
             <h1>Sign In</h1>
             <form onSubmit={handlesubmit}>
-            <div className="input-wrapper">
+            <div className="input-wrapper" id="input-wrapper-username">
                 <label htmlFor="username">Username</label>
                 <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" id="username" />
             </div>
-            <div className="input-wrapper">
+            <div className="input-wrapper" id="input-wrapper-password">
                 <label htmlFor="password">Password</label>
                 <input value={password} onChange={(e) => setPassword(e.target.value)}  type="password" id="password" />
             </div>
@@ -34,10 +34,6 @@ export const SignIn = () => {
                 <label htmlFor="remember-me">Remember me</label>
             </div>
 
-
-            {/* <NavLink  to={'/User'} className="sign-in-button" type="submit">
-                Sign In
-            </NavLink>  */}
             <button className="sign-in-button" type="submit">Sign In</button> 
             </form>
         </section>

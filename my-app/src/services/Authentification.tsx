@@ -22,7 +22,8 @@ export const login =  async (email, password) => {
     } else {
       console.log(result.message);
       throw new Error(result.message || 'Login failed');
-    }
+     }
+
   };
 
   
