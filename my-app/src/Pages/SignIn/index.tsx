@@ -2,17 +2,26 @@ import './index.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../services/Authentification';
+import { useDispatch } from 'react-redux';
+import { loginFailure, loginSuccess } from '../../store/reducers/authSlice';
 
 
 export const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate=useNavigate();
+    const dispatch=useDispatch();
+
 
     const handlesubmit = async (e) => {
         e.preventDefault();
-        await login(email, password);
-        navigate('/User');
+        try {
+            const user = await login(email, password);
+            dispatch(loginSuccess(user));
+            navigate('/User');
+        }catch (error){
+            dispatch(loginFailure());
+        }
     };
 
     return (
