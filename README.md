@@ -50,15 +50,15 @@ Once you run the `populate-db` script, you should have two users in your databas
 - First Name: `Tony`
 - Last Name: `Stark`
 - Email: `tony@stark.com`
-- Password: `password123`
+- Password: `c`
 
 ### Steve Rogers
 
 - First Name: `Steve`,
 - Last Name: `Rogers`,
 - Email: `steve@rogers.com`,
-- Password: `password456`
-
+- Passwordpassword456: `password456`
+steve@rogers.com
 ## API Documentation
 
 To learn more about how the API works, once you have started your local environment, you can visit: http://localhost:3001/api-docs

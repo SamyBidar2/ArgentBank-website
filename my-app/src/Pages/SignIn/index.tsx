@@ -14,13 +14,20 @@ export const SignIn = () => {
 
 
     const handlesubmit = async (e) => {
+
+        const message = document.getElementById('error-message');
+        const loginFail = document.createElement('div'); 
+       
         e.preventDefault();
-        try {
+        try {            
             const user = await login(email, password);
             dispatch(loginSuccess(user));
             navigate('/User');
         }catch (error){
             dispatch(loginFailure());
+            loginFail.classList.add('error-message');
+            loginFail.innerHTML = 'Login Failed, please try again';
+            message.appendChild(loginFail);
         }
     };
 
@@ -45,6 +52,8 @@ export const SignIn = () => {
 
             <button className="sign-in-button" type="submit">Sign In</button> 
             </form>
+            <div id='error-message'>
+            </div>
         </section>
     </main>
     )
